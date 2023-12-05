@@ -32,11 +32,21 @@ public:
 };
 int main()
 {
+    // static memory allocation
     Hero ramesh;
     ramesh.health = 89;
     ramesh.age = 20;
     ramesh.userName = "Ramesh";
     ramesh.setAccountDetails(123456);
     ramesh.printName();
+
+    // dynamic memory allocation
+    Hero *ashish = new Hero;
+    ashish->health = 90;
+    ashish->age = 21;
+    ashish->userName = "Ashish";
+    ashish->setAccountDetails(654321);
+    ashish->printName();
+    delete ashish; // it can be delted only when the memory is allocated dynamically.
     return 0;
 }
